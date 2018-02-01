@@ -1,4 +1,4 @@
-(ns app.pages.apps
+(ns demo-site.pages.apps
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             [demo-site.events]
