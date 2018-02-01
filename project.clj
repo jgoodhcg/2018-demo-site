@@ -7,6 +7,7 @@
                  [cider/cider-nrepl "0.15.1"]
                  [clj-time "0.14.2"]
                  [cljs-ajax "0.7.3"]
+                 [cljs-react-material-ui "0.2.43"]
                  [com.h2database/h2 "1.4.196"]
                  [compojure "1.6.0"]
                  [conman "0.7.5"]
@@ -26,7 +27,6 @@
                  [org.clojure/tools.logging "0.4.0"]
                  [org.clojure/tools.reader "1.2.1"]
                  [org.webjars.bower/tether "1.4.3"]
-                 [org.webjars/bootstrap "4.0.0"]
                  [org.webjars/font-awesome "5.0.2"]
                  [re-frame "0.10.3"]
                  [reagent "0.7.0"]
@@ -35,7 +35,8 @@
                  [ring/ring-core "1.6.3"]
                  [ring/ring-defaults "0.3.1"]
                  [secretary "1.2.3"]
-                 [selmer "1.11.6"]]
+                 [selmer "1.11.6"]
+                 [stylefy "1.2.0"]]
 
   :min-lein-version "2.0.0"
   
