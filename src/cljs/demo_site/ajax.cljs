@@ -1,4 +1,4 @@
-(ns app.ajax
+(ns demo-site.ajax
   (:require [ajax.core :as ajax]))
 
 (defn local-uri? [{:keys [uri]}]

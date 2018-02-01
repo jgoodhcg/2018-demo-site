@@ -1,4 +1,4 @@
-(ns app.nav
+(ns demo-site.nav
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             [secretary.core :as secretary]
@@ -6,14 +6,14 @@
             [goog.history.EventType :as HistoryEventType]
             [markdown.core :refer [md->html]]
             [ajax.core :refer [GET POST]]
-            [app.ajax :refer [load-interceptors!]]
-            [app.events]
+            [demo-site.ajax :refer [load-interceptors!]]
+            [demo-site.events]
             [cljsjs.material-ui]
             [cljs-react-material-ui.core :refer [get-mui-theme color]]
             [cljs-react-material-ui.reagent :as ui]
             [cljs-react-material-ui.icons :as ic]
             [stylefy.core :as stylefy]
-            [app.global-styles :as global-styles]))
+            [demo-site.global-styles :as global-styles]))
 
 (def style-navbar {:display "flex"
                    :flex-direction "row"

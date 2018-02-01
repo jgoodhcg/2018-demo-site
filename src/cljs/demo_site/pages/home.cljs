@@ -1,13 +1,13 @@
-(ns app.pages.home
+(ns demo-site.pages.home
   (:require  [reagent.core :as r]
              [re-frame.core :as rf]
-             [app.events]
+             [demo-site.events]
              [cljsjs.material-ui]
              [cljs-react-material-ui.core :refer [get-mui-theme color]]
              [cljs-react-material-ui.reagent :as ui]
              [cljs-react-material-ui.icons :as ic]
              [stylefy.core :as stylefy]
-             [app.global-styles :as global-styles]))
+             [demo-site.global-styles :as global-styles]))
 
 (def style-image-break 1000)
 

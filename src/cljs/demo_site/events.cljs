@@ -1,5 +1,5 @@
-(ns app.events
-  (:require [app.db :as db]
+(ns demo-site.events
+  (:require [demo-site.db :as db]
             [re-frame.core :refer [dispatch reg-event-db reg-sub]]))
 
 ;;dispatchers

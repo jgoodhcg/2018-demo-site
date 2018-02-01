@@ -1,4 +1,4 @@
-(ns app.global-styles
+(ns demo-site.global-styles
   (:require [stylefy.core :as stylefy]
             [cljs-react-material-ui.core :refer [get-mui-theme color]]))
 

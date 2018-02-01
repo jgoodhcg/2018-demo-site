@@ -1,4 +1,4 @@
-(ns app.core
+(ns demo-site.core
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             [secretary.core :as secretary]
@@ -6,19 +6,19 @@
             [goog.history.EventType :as HistoryEventType]
             [markdown.core :refer [md->html]]
             [ajax.core :refer [GET POST]]
-            [app.ajax :refer [load-interceptors!]]
-            [app.events]
+            [demo-site.ajax :refer [load-interceptors!]]
+            [demo-site.events]
             [cljsjs.material-ui]
             [cljs-react-material-ui.core :refer [get-mui-theme color]]
             [cljs-react-material-ui.reagent :as ui]
             [cljs-react-material-ui.icons :as ic]
             [stylefy.core :as stylefy]
-            [app.nav :as nav]
-            [app.global-styles :as global-styles]
-            [app.pages.home :refer [home-page]]
-            [app.pages.apps :refer [apps-page]]
-            [app.pages.blog :refer [blog-list-page blog-page]]
-            [app.pages.career :refer [career-page]])
+            [demo-site.nav :as nav]
+            [demo-site.global-styles :as global-styles]
+            [demo-site.pages.home :refer [home-page]]
+            [demo-site.pages.apps :refer [apps-page]]
+            [demo-site.pages.blog :refer [blog-list-page blog-page]]
+            [demo-site.pages.career :refer [career-page]])
   (:import goog.History))
 
 (def pages
