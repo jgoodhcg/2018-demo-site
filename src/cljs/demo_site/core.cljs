@@ -36,8 +36,7 @@
 
    [:div (stylefy/use-style style-base-page)
     (nav/navbar)
-    [:div (stylefy/use-style {:padding "1em"})
-     [(pages @(rf/subscribe [:page]))]]]])
+     [(pages @(rf/subscribe [:page]))]]])
 
 ;; -------------------------
 ;; Routes
