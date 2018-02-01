@@ -15,6 +15,11 @@
             [stylefy.core :as stylefy]
             [demo-site.global-styles :as global-styles]))
 
+(def style-paper {:background-color (:primary1Color global-styles/palette)
+                  :width "100%"
+                  :padding "1em"
+                  :margin-bottom "3em"})
+
 (def style-navbar {:display "flex"
                    :flex-direction "row"
                    :flex-wrap "nowrap"})
@@ -55,9 +60,7 @@
 (defn navbar []
   (let [current-page @(rf/subscribe [:page])
         open @(rf/subscribe [:nav-drawer])]
-   [ui/paper {:style {:background-color (:primary1Color global-styles/palette)
-                      :width "100%"
-                      :padding "1em"}}
+   [ui/paper {:style style-paper}
     [:div (stylefy/use-style style-navbar)
      [:div (stylefy/use-style global-styles/style-responsive-show-on-phone)
       [ui/flat-button {:icon (r/as-element [ui/svg-icon

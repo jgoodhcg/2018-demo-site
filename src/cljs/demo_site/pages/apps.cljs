@@ -10,10 +10,15 @@
             [demo-site.global-styles :as global-styles]))
 
 
-(def style-card {:display "flex"
-                 :flex "0 0 60^"
-                 ::stylefy/media {{:max-width (str global-styles/phone-width "px")}
-                                  {:flex "0 0 auto"}}})
+(def style-apps {:display "flex"
+                           :justify-content "center"})
+
+(def style-card-container {:display "flex"
+                           :width "60%"
+                           :justify-content "center"
+                           ::stylefy/media {{:max-width (str global-styles/phone-width "px")}
+                                            {:width "100%"}}})
+(def style-card {:width "100%"})
 
 (def style-card-text {:display "flex"
                       :flex-wrap "wrap"
@@ -29,26 +34,31 @@
             :media-image "https://dummyimage.com/1600x900/000/fff"}])
 
 (defn app-card [{:keys [avatar title subtitle text github link media-image]}]
-   [ui/card {:key (str title subtitle "app-card")}
+  [:div (stylefy/use-style style-apps)
+   [:div (stylefy/use-style style-card-container)
+    [ui/card {:key (str title subtitle "app-card") :style style-card}
 
-    [ui/card-header (merge
-                     (when (some? avatar) {:avatar avatar})
-                     (when (some? title) {:title title})
-                     (when (some? subtitle) {:subtitle subtitle})
-                     (when (some? media-image) {:actAsExpander true
-                                                :showExpandableButton true}))]
-    (when (some? media-image)
-      [ui/card-media {:expandable true}
-       [:img {:src media-image}]])
+          [ui/card-header (merge
+                           (when (some? avatar) {:avatar avatar})
+                           (when (some? title) {:title title})
+                           (when (some? subtitle) {:subtitle subtitle})
+                           (when (some? media-image) {:actAsExpander true
+                                                      :showExpandableButton true}))]
+          (when (some? media-image)
+            [ui/card-media {:expandable true}
+             [:img {:src media-image}]])
 
-    (when (some? text) [ui/card-text {:expandable true} [:p text]])
+          (when (some? text) [ui/card-text {:expandable true} [:p text]])
 
-    [ui/card-text
-     [:div (stylefy/use-style style-card-text)
-      (when (some? github) [ui/flat-button {:href github :label "github"
-                                            :primary true}])
-      (when (some? link)   [ui/flat-button {:href link :label title
-                                            :primary true}])]]])
+          [ui/card-text
+           [:div (stylefy/use-style style-card-text)
+            (when (some? github) [ui/flat-button {:href github :label "github"
+                                                  :primary true}])
+            (when (some? link)   [ui/flat-button {:href link :label title
+                                                  :primary true}])]]]]
+   
+   ]
+   )
 
 (defn apps-page []
   [:div (doall (->> apps (map app-card)))])
