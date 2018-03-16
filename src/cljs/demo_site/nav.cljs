@@ -15,10 +15,14 @@
             [stylefy.core :as stylefy]
             [demo-site.global-styles :as global-styles]))
 
+(def style-nav-container {:margin-bottom "3em"
+                          :width "100%"
+                          ::stylefy/media {{:max-width (str global-styles/phone-width "px")}
+                                           {:margin-bottom "1em"}}})
+
 (def style-paper {:background-color (:primary1Color global-styles/palette)
                   :width "100%"
-                  :padding "1em"
-                  :margin-bottom "3em"})
+                  :padding "1em"})
 
 (def style-navbar {:display "flex"
                    :flex-direction "row"
@@ -60,7 +64,8 @@
 (defn navbar []
   (let [current-page @(rf/subscribe [:page])
         open @(rf/subscribe [:nav-drawer])]
-   [ui/paper {:style style-paper}
+    [:div (stylefy/use-style style-nav-container)
+     [ui/paper {:style style-paper}
     [:div (stylefy/use-style style-navbar)
      [:div (stylefy/use-style global-styles/style-responsive-show-on-phone)
       [ui/flat-button {:icon (r/as-element [ui/svg-icon
@@ -80,5 +85,6 @@
 
      [:div (stylefy/use-style global-styles/style-responsive-hide-on-phone)
       (->> nav-links
-           (map #(nav-link-app-bar (merge {:current-page current-page} %))))]]]))
+           (map #(nav-link-app-bar (merge {:current-page current-page} %))))]]]]
+   ))
 

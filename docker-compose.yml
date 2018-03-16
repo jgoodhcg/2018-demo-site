@@ -13,6 +13,6 @@ services:
     user: "${UID}:0"
     volumes:
       - .:/usr/app/demo-site
-      - /home/$USER/.lein:/.lein
+      - ./.lein:/.lein
     working_dir: /usr/app/demo-site
     command: ["lein", "repl", ":headless", ":host", "0.0.0.0", ":port", "7000"]

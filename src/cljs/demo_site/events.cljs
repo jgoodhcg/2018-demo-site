@@ -15,9 +15,9 @@
     (assoc db :page page)))
 
 (reg-event-db
-  :set-docs
-  (fn [db [_ docs]]
-    (assoc db :docs docs)))
+  :set-blogs
+  (fn [db [_ blogs]]
+    (assoc db :blogs blogs)))
 
 (reg-event-db
  :toggle-nav-drawer
@@ -33,9 +33,9 @@
     (:page db)))
 
 (reg-sub
-  :docs
+  :blogs
   (fn [db _]
-    (:docs db)))
+    (:blogs db)))
 
 (reg-sub
  :nav-drawer

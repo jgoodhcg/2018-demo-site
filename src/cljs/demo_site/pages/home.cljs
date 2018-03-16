@@ -40,8 +40,4 @@
     [:div (stylefy/use-style style-card-container)
      [ui/paper {:style {:padding "1em"
                         :width   "100%"}}
-      [:div [:p "this is some bio this content has a bunch more stuff"]]]]
-    ]
-   
-
-   ])
+      [:div [:p "this is some bio this content has a bunch more stuff"]]]]]])

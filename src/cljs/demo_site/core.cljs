@@ -71,8 +71,8 @@
 
 ;; -------------------------
 ;; Initialize app
-(defn fetch-docs! []
-  (GET "/docs" {:handler #(rf/dispatch [:set-docs %])}))
+(defn fetch-blogs! []
+  (GET "/blogs" {:handler #(rf/dispatch [:set-blogs %])}))
 
 (defn mount-components []
   (rf/clear-subscription-cache!)
@@ -81,7 +81,7 @@
 (defn init! []
   (rf/dispatch-sync [:initialize-db])
   (load-interceptors!)
-  (fetch-docs!)
+  (fetch-blogs!)
   (hook-browser-navigation!)
   (mount-components)
   (stylefy/init))

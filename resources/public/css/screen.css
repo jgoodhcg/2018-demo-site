@@ -4,5 +4,14 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #c2c2c2;
-
 }
+
+@keyframes loading {
+  0%    {opacity: 1;   y:0;  fill:#333;}
+  50%   {opacity: 0.5; y:30; fill:#fff;}
+  100%  {opacity: 1;   y:0;  fill:#333;}
+}
+
+.loading-rect-1{ animation: loading 2s ease-in-out 0.1s  infinite ;}
+.loading-rect-2{ animation: loading 2s ease-in-out 0.25s infinite ;}
+.loading-rect-3{ animation: loading 2s ease-in-out 0.5s  infinite ;}

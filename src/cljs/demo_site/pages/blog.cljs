@@ -11,13 +11,13 @@
             [markdown.core :refer [md->html]]))
 
 (defn blog-page []
-  ;; [:div.container
-  ;;  (when-let [docs @(rf/subscribe [:docs])]
-  ;;    [:div.row>div.col-sm-12
-  ;;     [:div {:dangerouslySetInnerHTML
-  ;;            {:__html (md->html docs)}}]])]
-  [:div "blog page"])
+  )
 
 (defn blog-list-page []
-  [:div "blog-list-page"])
+  [:div
+   (when-let [blogs @(rf/subscribe [:blogs])]
+     (->> blogs
+          (mapv (fn [blog]
+                  [:div {:dangerouslySetInnerHTML
+                         {:__html (md->html (:file-contents blog))}}]))))])
 
